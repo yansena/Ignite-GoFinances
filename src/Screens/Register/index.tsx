@@ -5,6 +5,7 @@ import { Button } from "../../components/Form/Button";
 
 import { Container, Header, Title, Form, Fields, TransactionsTypes } from "./styles";
 import { TransactionTypeButton } from "../../components/Form/TransactionTypeButton";
+import { CategorySelect } from "../../components/Form/CategorySelect";
 
 export function Register() {
 
@@ -39,6 +40,8 @@ export function Register() {
               isActive={transactionType === 'down'}
             />
           </TransactionsTypes>
+
+          <CategorySelect title="Categoria"/>
 
         </Fields>
 
