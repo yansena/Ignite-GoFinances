@@ -12,7 +12,7 @@ import {
 
 import theme from './src/global/styles/theme';
 import { Dashboard } from './src/Screens/Dashboard';
-import { Register } from './src/Screens/Register';
+import { CategorySelect } from './src/Screens/CategorySelect';
 
 export default function App() {
 
@@ -28,7 +28,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Register/>
+      <CategorySelect />
     </ThemeProvider>
   );
 }
