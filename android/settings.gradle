@@ -1,4 +1,4 @@
-rootProject.name = 'gofinance'
+rootProject.name = 'InginteGoFinance'
 
 apply from: '../node_modules/react-native-unimodules/gradle.groovy'
 includeUnimodulesProjects()
