@@ -1,7 +1,10 @@
 
 import React from 'react';
 import AppLoading from 'expo-app-loading';
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components';
+
+import 'intl';
+import 'intl/locale-data/jsonp/pt-BR';
 
 import { NavigationContainer } from '@react-navigation/native'
 import { AppRoutes } from './src/routes/app.routes';
