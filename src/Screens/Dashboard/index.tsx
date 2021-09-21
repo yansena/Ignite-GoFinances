@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { ActivityIndicator } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
 import { useFocusEffect } from '@react-navigation/native'
+import { format } from 'date-fns'
+
 import { useTheme } from 'styled-components';
 
 import { HighlightCard } from "../../components/HighlightCard";
@@ -58,11 +59,8 @@ export function Dashboard(){
         .filter(transaction => transaction.type === type)
         .map(transaction => new Date(transaction.date).getTime()));
 
-        return Intl.DateTimeFormat('pt-BR', {
-            day: '2-digit',
-            month: 'long',
-            year: '2-digit'
-        }).format(new Date(lastTransaction));
+
+        return format(new Date(lastTransaction), 'dd/MM/yyyy');
     }
     
     async function loadTransactions(){
@@ -88,11 +86,7 @@ export function Dashboard(){
                 currency: 'BRL'
             });
 
-            const date = Intl.DateTimeFormat('pt-BR', {
-                day: '2-digit',
-                month: '2-digit',
-                year: '2-digit'
-            }).format(new Date(item.date));
+            const date = format(new Date(item.date), 'dd/MM/yyyy');
 
             return {
                 id: item.id,
@@ -183,7 +177,7 @@ export function Dashboard(){
                         <HighlightCard 
                             type="up"
                             title="Entradas" 
-                            amount={highlightData.entries.amount} 
+                            amount={highlightData.entries.amount}
                             lastTransaction={highlightData.entries.lastTransaction}
                         />
                         <HighlightCard 
