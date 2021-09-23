@@ -60,7 +60,13 @@ export function Dashboard(){
         .map(transaction => new Date(transaction.date).getTime()));
 
 
-        return format(new Date(lastTransaction), 'dd/MM/yyyy');
+        
+        // console.log(lastTransaction)
+        if(lastTransaction == -Infinity){
+            return " -  sem registros"
+        } else {
+            return format(new Date(lastTransaction), 'dd/MM/yyyy');
+        }
     }
     
     async function loadTransactions(){
