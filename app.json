@@ -1,11 +1,12 @@
 {
   "expo": {
-    "name": "Inginte-GoFinance",
-    "slug": "Inginte-GoFinance",
+    "name": "ignite-gofinance",
+    "slug": "ignite-gofinance",
+    "scheme": "ignite-gofinance",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
     ]
   },
-  "name": "Inginte-GoFinance"
+  "name": "ignite-gofinance"
 }
