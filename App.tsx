@@ -10,6 +10,7 @@ import 'intl/locale-data/jsonp/pt-BR';
 import { NavigationContainer } from '@react-navigation/native'
 import { AppRoutes } from './src/routes/app.routes';
 import { SignIn } from './src/Screens/SignIn'
+import { Routes }  from './src/routes'
 
 import { AuthProvider } from './src/hooks/auth';
 
@@ -37,14 +38,12 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <NavigationContainer>
         <StatusBar barStyle="light-content"/>
         
         <AuthProvider>
-          <SignIn/>
+          <Routes/>
         </AuthProvider>
 
-      </NavigationContainer>
     </ThemeProvider>
   );
 }
