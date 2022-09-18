@@ -32,7 +32,7 @@ interface IAuthContextData {
     userStorageLoading: boolean;
 }
 
-interface AuthorizationResponse {
+export interface AuthorizationResponse {
     params: {
         access_token: string;
     };
@@ -49,7 +49,6 @@ function AuthProvider({ children }: AuthProviderProps) {
 
     async function signInWithGoogle() {
         try {
-            console.log(CLIENT_ID, REDIRECT_URI);
             const RESPONSE_TYPE = 'token';
             const SCOPE = encodeURI('profile email');
 
@@ -62,7 +61,7 @@ function AuthProvider({ children }: AuthProviderProps) {
                 const response = await fetch(`https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${params.access_token}`);
                 const userInfo = await response.json();
 
-                console.log(userInfo);
+                console.log("USER INFO AQUI ==>", userInfo);
 
                 const userLogged = {
                     id: userInfo.id,
